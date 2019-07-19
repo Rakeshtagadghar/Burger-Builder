@@ -1,8 +1,6 @@
 import React from "react";
 import classes from "./Burger.module.css";
 import BurgerIngredient from "./BurgerIngredients/BurgerIngredients";
-import BuildControls from "./BuildControls/BuildControls";
-
 const Burger = props => {
   let transformedIngredients = Object.keys(props.ingredients)
     .map(igKey => {
@@ -14,7 +12,6 @@ const Burger = props => {
       return arr.concat(el);
     }, []);
 
-  console.log(transformedIngredients);
   if (transformedIngredients.length === 0) {
     transformedIngredients = <p>Please start adding ingredients</p>;
   }
@@ -23,7 +20,6 @@ const Burger = props => {
       <BurgerIngredient type="bread-top" />
       {transformedIngredients}
       <BurgerIngredient type="bread-bottom" />
-      <BuildControls />
     </div>
   );
 };
